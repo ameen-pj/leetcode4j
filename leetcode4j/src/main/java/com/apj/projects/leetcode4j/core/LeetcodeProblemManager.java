@@ -18,9 +18,9 @@ public class LeetcodeProblemManager {
 	private LeetcodeProblemLoader problemLoader;
 
 	/**
-	 * Initializes LeetcodeProblemLoader and LeetcodeProblemManager
+	 * Initializes and loads the problems classes and it's corresponding testcases
 	 * 
-	 * @param packageName
+	 * @param packageName : package containing leetcode problems
 	 */
 	public LeetcodeProblemManager(String packageName) {
 		logger.info("Initializing leetcode4j...");
@@ -37,9 +37,11 @@ public class LeetcodeProblemManager {
 		for (Class<?> problem : problemTestCaseMap.keySet()) {
 			Object obj = createProblemObject(problem);
 			if (obj != null) {
+				logger.info("Problem: {}", problem.getSimpleName());
 				ArrayList<Method> testCases = problemTestCaseMap.get(problem);
 				for (Method testCase : testCases) {
 					try {
+						logger.info("Invoking testcase: {} ...", testCase.getName());
 						testCase.invoke(obj);
 					} catch (IllegalAccessException e) {
 						logger.error("leetcode4j error", e);
