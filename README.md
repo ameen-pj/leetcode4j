@@ -6,7 +6,7 @@
 
 * Use your favourite IDE
 * Multiple utility classes to save time and assist users in solving problems more efficiently.
-* Debug your solutions locally on your machine without subscribing to 'LeetCode Premium'.
+* Debug your solutions locally without subscribing to 'LeetCode Premium'.
 
 ## **Installation** ⬇️
 
