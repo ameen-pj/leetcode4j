@@ -61,44 +61,31 @@ public class ValidBST {
 
 	@TestCase
 	public void T1() {
-		System.out
-				.println(new ValidBST().isValidBST(new LeetcodeInputTransformer("[2, 1, 3]").transformToIntegerBST()));
+		System.out.println(new ValidBST().isValidBST(new LeetcodeInputTransformer("[2, 1, 3]").transformToIntegerBST()));
 	}
-
 	@TestCase
 	public void T2() {
-		System.out.println(new ValidBST()
-				.isValidBST(new LeetcodeInputTransformer("[5, 1, 4, null, null, 3, 6]").transformToIntegerBST()));
+		System.out.println(new ValidBST().isValidBST(new LeetcodeInputTransformer("[5, 1, 4, null, null, 3, 6]").transformToIntegerBST()));
 	}
-
 	@TestCase
 	public void T3() {
 		System.out.println(new ValidBST().isValidBST(new LeetcodeInputTransformer("[2,2,2]").transformToIntegerBST()));
-
 	}
 
-    // CODE
-
+	// CODE
 	private LinkedList<Integer> stack = new LinkedList<Integer>();
 
 	public boolean isValidBST(TreeNode root) {
-
 		if (root == null)
 			return true;
-
 		boolean b1 = isValidBST(root.left);
 		if (stack.size() > 0 && stack.peek() >= root.val)
 			return false;
-
 		stack.addFirst(root.val);
 		boolean b2 = isValidBST(root.right);
 		System.out.println(stack);
 		return b1 && b2;
 	}
-
 }
-
-
-
 ```
 3. Run App.java
