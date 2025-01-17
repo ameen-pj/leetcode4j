@@ -47,6 +47,5 @@ public class TreeNodeUtility {
 		} else {
 			tree.right = null;
 		}
-
 	}
 }

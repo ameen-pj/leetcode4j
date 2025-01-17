@@ -2,7 +2,7 @@
 <Configuration>
 	<Appenders>
 		<Console name="CONSOLE">
-			<PatternLayout disableAnsi="false" pattern="[%5p] [%c] %m%n"/>		
+			<PatternLayout disableAnsi="false" pattern="%highlight{[%5p] [%c] %m%n}{INFO=black bold, ERROR=red bold}"/>		
 		</Console>
 	</Appenders>
 	
