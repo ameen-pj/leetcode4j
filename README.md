@@ -45,7 +45,7 @@ public class App {
 ```
 2. Create a problem class and annotate the **class with @LeetcodeProblem** and the **testcase methods with @TestCase**
 
-**com.leetcode.problems.validBST.java**
+**Eg: com.leetcode.problems.validBST.java**
 ```
 package com.leetcode.problems;
 
@@ -90,3 +90,30 @@ public class ValidBST {
 }
 ```
 3. Run App.java
+
+## Datatypes ℹ️
+
+1. ListNode
+2. TreeNode
+ 
+(*see javadoc for more details*)
+
+## LeetcodeInputTransformer 💪
+
+*A powerful class to transform Leetcode input strings to multiple datatypes.*
+
+**NOTE: This class is under active development**
+
+eg:
+```
+(com.apj.projects.leetcode4j.datatypes.utils.LeetcodeInputTransformer)
+
+LeetcodeInputTransformer lit = new LeetcodeInputTransformer("[1,2,3]");
+int[] intArr = lit.transformTo1DIntArray();
+ListNode head = lit.transformToIntLinkedList();
+TreeNode root = lit.transformToIntegerBST();
+String[] strArr = lit.transformTo1DStringArray();
+
+```
+
+(*see javadoc for more details*)
