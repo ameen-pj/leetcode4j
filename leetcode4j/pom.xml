@@ -10,7 +10,19 @@
   <name>leetcode4j</name>
   <description>A simple testing framework for leetcode questions in Java</description>
   <url>https://github.com/ameen-pj/leetcode4j</url>
-
+  
+  <build>
+  	<resources>
+	  	<resource>
+	  		<directory>src/main/java</directory>
+	  		<includes>
+	  			<include>**/*.xml</include>
+	  		</includes>
+	  	</resource>
+	  		
+  	</resources>
+  </build>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>

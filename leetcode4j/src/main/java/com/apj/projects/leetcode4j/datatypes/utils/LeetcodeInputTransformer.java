@@ -26,27 +26,22 @@ public class LeetcodeInputTransformer {
 	 * with '[' and should end with ']' with numbers seperated by a comma ',' eg -
 	 * [1, 2, 3] )
 	 * 
-	 * @return Integer[] 1D array
+	 * @return int[] 1D array
 	 * @throws BadInputException
 	 */
-	public Integer[] transformTo1DIntArray() throws BadInputException {
+	public int[] transformTo1DIntArray() throws BadInputException {
 
 		if (input.contains("[") && input.contains("]")) {
 
 			String[] splitted = input.substring(input.indexOf('[') + 1, input.indexOf(']')).split(",");
 			int length = splitted.length;
-			Integer[] result = new Integer[length];
+			int[] result = new int[length];
 
 			for (int i = 0; i < length; i++) {
 				try {
 					String s = splitted[i].trim().toLowerCase();
-					if (s.equals("null")) {
-						result[i] = null;
-					} else {
-						int a = Integer.valueOf(s);
-						result[i] = a;
-					}
-
+					int a = Integer.valueOf(s);
+					result[i] = a;
 				} catch (NumberFormatException e) {
 					throw new BadInputException("Could not convert " + splitted[i].trim() + " to int");
 				}
@@ -90,11 +85,12 @@ public class LeetcodeInputTransformer {
 	 * @return head ListNode (i.e first element of the LinkedList)
 	 * @throws BadInputException
 	 */
-	public ListNode transformToIntegerLinkedList() throws BadInputException {
+	public ListNode transformToIntLinkedList() throws BadInputException {
 
-		Integer[] intArr = transformTo1DIntArray();
+		int[] intArr = transformTo1DIntArray();
 		ListNode head = ListNodeUtility.populate(intArr);
 		return head;
+
 	}
 
 	/**
@@ -106,9 +102,29 @@ public class LeetcodeInputTransformer {
 	 * @throws BadInputException
 	 */
 	public TreeNode transformToIntegerBST() throws BadInputException {
-		Integer[] intArr = transformTo1DIntArray();
-		TreeNode root = TreeNodeUtility.populate(intArr);
-		return root;
 
+		if (input.contains("[") && input.contains("]")) {
+			String[] splitted = input.substring(input.indexOf('[') + 1, input.indexOf(']')).split(",");
+			int length = splitted.length;
+			Integer[] result = new Integer[length];
+
+			for (int i = 0; i < length; i++) {
+				try {
+					String s = splitted[i].trim().toLowerCase();
+					if (s.equals("null")) {
+						result[i] = null;
+					} else {
+						int a = Integer.valueOf(s);
+						result[i] = a;
+					}
+				} catch (NumberFormatException e) {
+					throw new BadInputException("Could not convert " + splitted[i].trim() + " to int");
+				}
+			}
+			TreeNode root = TreeNodeUtility.populate(result);
+			return root;
+		} else {
+			throw new BadInputException("Could not find array identifier \'[\' or \']\'");
+		}
 	}
 }

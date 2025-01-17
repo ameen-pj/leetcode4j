@@ -15,17 +15,17 @@ public class ListNodeUtility {
 	 * @param nums
 	 * @return head ListNode (first element of LinkedList)
 	 */
-	public static ListNode populate(Integer[] nums) {
+	public static ListNode populate(int[] nums) {
 
 		ListNode head = new ListNode();
 		ListNode current = null;
 
-		for (int num : nums) {
-			if (head.val == null) {
-				head = new ListNode(num);
+		for (int i = 0; i < nums.length; i++) {
+			if (i == 0) {
+				head = new ListNode(nums[i]);
 				current = head;
 			} else {
-				current.next = new ListNode(num);
+				current.next = new ListNode(nums[i]);
 				current = current.next;
 			}
 		}

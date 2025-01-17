@@ -9,7 +9,7 @@ public class ListNode {
 	/**
 	 * Contains the value of a particular ListNode
 	 */
-	public Integer val;
+	public int val;
 	/**
 	 * Contains the reference to next ListNode
 	 */
@@ -37,7 +37,7 @@ public class ListNode {
 	 * @param val
 	 * @param next
 	 */
-	public ListNode(Integer val, ListNode next) {
+	public ListNode(int val, ListNode next) {
 		this.val = val;
 		this.next = next;
 	}
