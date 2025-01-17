@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.apj.projects.leetcode4j.annotations"},{"l":"com.apj.projects.leetcode4j.core"},{"l":"com.apj.projects.leetcode4j.datatypes"},{"l":"com.apj.projects.leetcode4j.datatypes.exceptions"},{"l":"com.apj.projects.leetcode4j.datatypes.utils"}];updateSearchResults();
