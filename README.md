@@ -13,6 +13,7 @@
 1. Clone this project
 2. Make sure that you have maven installed and run the following command
 ```
+>>> cd leetcode4j/
 >>> mvn clean install
 ```
 3. Create a new maven project and add the project to your pom.xml file
@@ -42,7 +43,7 @@ public class App {
 }
 
 ```
-2. Create a problem class and annotate the class with @LeetcodeProblem and the testcase methods with @TestCase
+2. Create a problem class and annotate the **class with @LeetcodeProblem** and the **testcase methods with @TestCase**
 
 **com.leetcode.problems.validBST.java**
 ```
