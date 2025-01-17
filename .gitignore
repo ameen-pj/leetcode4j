@@ -1,3 +1,5 @@
+/target/
+/bin/
 # Compiled class file
 *.class
 
@@ -25,7 +27,6 @@ replay_pid*
 /.metadata/
 
 
-bin/
 
 # Eclipse specific
 .classpath
