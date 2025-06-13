@@ -32,8 +32,13 @@ public class LeetcodeInputTransformer {
 	public int[] transformTo1DIntArray() throws BadInputException {
 
 		if (input.contains("[") && input.contains("]")) {
-
-			String[] splitted = input.substring(input.indexOf('[') + 1, input.indexOf(']')).split(",");
+			String substr = input.substring(input.indexOf('[') + 1, input.indexOf(']'));
+			// For empty array
+			if (substr.length() == 0) {
+				return new int[] {};
+			}
+			// else ok ..
+			String[] splitted = substr.split(",");
 			int length = splitted.length;
 			int[] result = new int[length];
 
@@ -63,8 +68,12 @@ public class LeetcodeInputTransformer {
 	public String[] transformTo1DStringArray() throws BadInputException {
 
 		if (input.contains("[") && input.contains("]")) {
-
-			String[] splitted = input.substring(input.indexOf('[') + 1, input.indexOf(']')).split(",");
+			String substr = input.substring(input.indexOf('[') + 1, input.indexOf(']'));
+			// For empty array
+			if (substr.length() == 0) {
+				return new String[] {};
+			}
+			String[] splitted = substr.split(",");
 			int length = splitted.length;
 			String[] result = new String[length];
 
